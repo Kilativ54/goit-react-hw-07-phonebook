@@ -36,7 +36,7 @@ export function ContactForm() {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
         placeholder="Enter name"
-             />
+      />
       <Label>Number </Label>
       <Input
         type="tel"
@@ -45,10 +45,8 @@ export function ContactForm() {
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
         placeholder="Enter phone number"
-         />
+      />
       <Button type="submit">Add contact</Button>
     </Form>
   );
-};
-
-
+}

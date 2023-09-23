@@ -23,19 +23,21 @@ export function ContactList() {
   };
 
   const visibleContacts = getFilterContact();
-  return(
-  <div>
-    <ul>
-      {visibleContacts.map(({ id, name, phone }) => (
-        <li key={id}>
-          {name}: {phone}
-          <BtnDelete type="button" onClick={() => dispatch(deleteContact(id))}>
-            Delete
-          </BtnDelete>
-        </li>
-      ))}
-    </ul>
-  </div>
-);}
-
-
+  return (
+    <div>
+      <ul>
+        {visibleContacts.map(({ id, name, phone }) => (
+          <li key={id}>
+            {name}: {phone}
+            <BtnDelete
+              type="button"
+              onClick={() => dispatch(deleteContact(id))}
+            >
+              Delete
+            </BtnDelete>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

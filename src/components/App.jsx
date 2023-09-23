@@ -6,12 +6,8 @@ import { fetchContacts } from 'redux/operations';
 import { Filter } from './filter/Filter';
 import { ContactList } from './contactList/contactList';
 
-
-
 import { Container } from './App.styled';
 import { ContactForm } from './contactForm/ContactForm';
-
-
 
 export function App() {
   const dispatch = useDispatch();
@@ -21,15 +17,14 @@ export function App() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-
-   return (
+  return (
     <Container>
       <h1>Phonebook</h1>
       <ContactForm />
       {isLoading && !error && <b>Request in progress...</b>}
       <h2> Contacts</h2>
-      <Filter  />
-      <ContactList/>
+      <Filter />
+      <ContactList />
     </Container>
   );
 }

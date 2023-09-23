@@ -35,23 +35,21 @@ const handleDeleteContactsFulfilled = (state, action) => {
   state.contactsItem.splice(deleteIdx, 1);
 };
 
-export const contactsSlice = createSlice(
-  {
-    name: 'contacts',
-    initialState,
-    extraReducers: builder =>
-      builder
-        .addCase(fetchContacts.pending, handlePending)
-        .addCase(fetchContacts.fulfilled, handleFetchContactsFulfilled)
-        .addCase(fetchContacts.rejected, handleRejected)
-        .addCase(addContact.pending, handlePending)
-        .addCase(addContact.fulfilled, handleAddContactsFulfilled)
-        .addCase(addContact.rejected, handleRejected)
-        .addCase(deleteContact.pending, handlePending)
-        .addCase(deleteContact.fulfilled, handleDeleteContactsFulfilled)
-        .addCase(deleteContact.rejected, handleRejected),
-  }
-);
+export const contactsSlice = createSlice({
+  name: 'contacts',
+  initialState,
+  extraReducers: builder =>
+    builder
+      .addCase(fetchContacts.pending, handlePending)
+      .addCase(fetchContacts.fulfilled, handleFetchContactsFulfilled)
+      .addCase(fetchContacts.rejected, handleRejected)
+      .addCase(addContact.pending, handlePending)
+      .addCase(addContact.fulfilled, handleAddContactsFulfilled)
+      .addCase(addContact.rejected, handleRejected)
+      .addCase(deleteContact.pending, handlePending)
+      .addCase(deleteContact.fulfilled, handleDeleteContactsFulfilled)
+      .addCase(deleteContact.rejected, handleRejected),
+});
 
 export const { fetchingInProgress, fetchingSuccess, fetchingError } =
   contactsSlice.actions;
